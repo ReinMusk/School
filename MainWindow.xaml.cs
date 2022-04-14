@@ -20,6 +20,8 @@ namespace School
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static SCHOOLGavrEntities db = new SCHOOLGavrEntities();
+        public static MainWindow main;
         public MainWindow()
         {
             InitializeComponent();

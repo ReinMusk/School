@@ -38,7 +38,7 @@
                     <GridViewColumn Header="Фото">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding MainImagePath}" Height="70"/>
+                                <Image Source="{Binding ServicePhoto.PhotoPath}" Height="70"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

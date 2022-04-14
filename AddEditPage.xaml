@@ -12,32 +12,35 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <StackPanel Margin="10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock Text="Наименование" Margin="10"></TextBlock >
-                    <TextBox Text="{Binding Name}" x:Name="NameTb" Height="30" Width="200"></TextBox>
+                    <TextBlock Text="Наименование" Margin="5"></TextBlock >
+                    <TextBox Text="{Binding Title}" x:Name="NameTb" Height="30" Width="200"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock Text="Описание" Margin="10"></TextBlock >
+                    <TextBlock Text="Описание" Margin="5"></TextBlock >
                     <TextBox Text="{Binding Description}" x:Name="DescriptionTb" Height="30" Width="200"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock Text="Ед.измерения" Margin="10"></TextBlock >
-                    <ComboBox SelectedItem="{Binding Unit}" DisplayMemberPath="Name"  x:Name="UnitCb" Height="30" Width="200"></ComboBox>
+                    <TextBlock Text="Стоимось" Margin="5"></TextBlock >
+                    <TextBox Text="{Binding Cost}" x:Name="CostTb" Height="30" Width="200"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock Text="Изображение" Margin="10"></TextBlock >
+                    <TextBlock Text="Время в сек" Margin="5"></TextBlock >
+                    <TextBox Text="{Binding DurationInSeconds}" x:Name="DurationTb" Height="30" Width="200"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Cкидка" Margin="5"></TextBlock >
+                    <TextBox Text="{Binding Discount}" x:Name="DiscountTb" Height="30" Width="200"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="Изображение" Margin="5"></TextBlock >
                     <Button Height="40" x:Name="AddPhoto" Content="Добавить фото" Click="AddPhoto_Click"></Button>
-                    <Image Height="150" Source="{Binding Photo}" x:Name="PhotoProductImg" Width="200"></Image>
+                    <Image Height="150" Source="{Binding ServicePhoto.PhotoPath}" x:Name="PhotoProductImg" Width="200"></Image>
                 </StackPanel>
                 <StackPanel>
-
+                    <Button x:Name="BackBtn" Click="BackBtn_Click">Назад</Button>
                     <Button x:Name="SaveBtn" Click="SaveBtn_Click">Сохранить</Button>
                 </StackPanel>
             </StackPanel>
-
-            
-
-
-
         </StackPanel>
 
     </Grid>

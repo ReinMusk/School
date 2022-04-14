@@ -37,18 +37,33 @@ namespace School
 
         private void add_btn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEditPage(new Service));
+            NavigationService.Navigate(new AddEditPage(new Service()));
 
         }
 
         private void edit_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            var Selected = serv.SelectedItem as Service;
+            if (Selected != null)
+                NavigationService.Navigate(new AddEditPage(Selected));
+            else
+                MessageBox.Show("Ничего не выбрано!");
         }
 
         private void del_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            var isSelProduct = serv.SelectedItem as Product;
+            if (isSelProduct != null)
+            {
+                var result = MessageBox.Show("Удалить?", "", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.OK)
+                {
+                    MainWindow.db.Product.Remove(isSelProduct);
+                    MainWindow.db.SaveChanges();
+                }
+            }
+            else
+                MessageBox.Show("Ничего не выбрано!");
         }
     }
 }
